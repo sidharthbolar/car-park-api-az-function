@@ -1,0 +1,19 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "mytimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 */15 * * * *"
+    },
+    {
+      "type": "eventHub",
+      "name": "$return",
+      "eventHubName": "nsw-car-park-status",
+      "connection": "MyEventHubSendAppSetting",
+      "direction": "out"
+  }
+  ]
+
+}
