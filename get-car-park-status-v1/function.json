@@ -10,7 +10,7 @@
     {
       "type": "eventHub",
       "name": "$return",
-      "eventHubName": "nsw-car-park-status",
+      "eventHubName": "car-park-status",
       "connection": "MyEventHubSendAppSetting",
       "direction": "out"
   }

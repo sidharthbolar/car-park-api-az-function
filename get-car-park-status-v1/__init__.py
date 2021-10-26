@@ -1,9 +1,6 @@
 import datetime
 import logging
-import os
-from shared_code import get_car_par_status,get_weather_status
 from shared_code.get_car_par_status import get_carpark_data
-import requests
 import azure.functions as func
 
 
