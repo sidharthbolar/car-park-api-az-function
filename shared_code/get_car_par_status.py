@@ -11,7 +11,6 @@ from facility import Facility
 facility_dict=constants.FACILITY_DICT
 facility_list=[]
 
-#headers=constants.HEADERS
 
 #Initialise Facilities
 for key,value in facility_dict.items():  
