@@ -17,5 +17,5 @@ def main(mytimer: func.TimerRequest) -> str:
     logging.info('Python timer trigger function ran at %s', utc_timestamp)
     facility_dict=facility_init_base()
     print(facility_dict)
-    message=facility_dict
+    message=str(facility_dict)
     return message
