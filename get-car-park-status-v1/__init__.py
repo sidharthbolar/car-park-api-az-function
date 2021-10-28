@@ -1,8 +1,7 @@
 import datetime
 import logging
-from shared_code.get_car_par_status import get_carpark_data
 import azure.functions as func
-
+from shared_code.get_car_par_status import facility_init_base
 
 
 def main(mytimer: func.TimerRequest) -> str:
@@ -16,6 +15,7 @@ def main(mytimer: func.TimerRequest) -> str:
     
 
     logging.info('Python timer trigger function ran at %s', utc_timestamp)
-    print (str(get_carpark_data()).replace('None','\'\''))
-    message=str(get_carpark_data()).replace('None','\'\'')
+    facility_dict=facility_init_base()
+    print(facility_dict)
+    message=facility_dict
     return message

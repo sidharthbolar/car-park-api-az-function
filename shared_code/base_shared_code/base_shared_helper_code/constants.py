@@ -19,10 +19,10 @@ FACILITY_DICT={
   "489": "Manly Vale Car Park"
 }
 
+URL_BASE_CARPARK='https://api.transport.nsw.gov.au/v1/carpark'
+
 URL_CARPARK = 'https://api.transport.nsw.gov.au/v1/carpark?facility='
 
 URL_CARPARK_HISTORY='https://api.transport.nsw.gov.au/v1/carpark/history?'
 
-#HEADERS = {'content-type': 'application/json',
-#          'Authorization':'apikey {}'.format(os.environ["NSWAPIKey"])}
 

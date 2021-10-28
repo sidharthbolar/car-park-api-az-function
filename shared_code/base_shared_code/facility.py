@@ -1,18 +1,16 @@
 import logging
-import constants
-import helper
-from shared_code.facilityinterface import FacilityInterface
 import requests
-
-
-#Constants Declaration
-facility_dict=constants.FACILITY_DICT
+from shared_code.base_shared_code.base_shared_helper_code import constants as constants
+from shared_code.base_shared_code.base_shared_helper_code import helper as helper
+from shared_code.base_shared_code.base_shared_helper_code.facilityinterface import FacilityInterface
 
 
 class Facility(FacilityInterface):
     
+    url_base_carpark=constants.URL_BASE_CARPARK
     url_carpark=constants.URL_CARPARK
     url_carpark_history=constants.URL_CARPARK_HISTORY
+    
     #headers=constants.HEADERS
 
 
@@ -64,3 +62,8 @@ class Facility(FacilityInterface):
         
         return json_response
 
+    @staticmethod
+    def get_init_carpark(headers,url_base_carpark=url_base_carpark) -> dict :
+        facility_dict={}
+        facility_dict = requests.get(url_base_carpark,headers=headers).json()
+        return facility_dict
