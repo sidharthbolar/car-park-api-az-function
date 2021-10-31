@@ -5,12 +5,20 @@
       "name": "mytimer",
       "type": "timerTrigger",
       "direction": "in",
-      "schedule": "0 */15 * * * *"
+      "schedule": "0 */1 * * * *"
     },
     {
       "type": "eventHub",
-      "name": "$return",
-      "eventHubName": "car-park-status",
+      "name": "carparkrt",
+      "eventHubName": "car-park-status-rt",
+      "connection": "MyEventHubSendAppSetting",
+      "direction": "out"
+  }
+  ,
+    {
+      "type": "eventHub",
+      "name": "carparkeod",
+      "eventHubName": "car-park-status-eod",
       "connection": "MyEventHubSendAppSetting",
       "direction": "out"
   }
