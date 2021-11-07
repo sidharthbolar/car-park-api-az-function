@@ -44,9 +44,21 @@ class Facility(FacilityInterface):
         Returns:
         json response containing the current carpark status
         '''
-        json_response = requests.get(url_carpark+self.facility_name, headers=headers).json()
+        try:
+            response = response = requests.get(url_carpark+self.facility_name, headers=headers)
+            response.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            logging.ERROR('HTTP Error : --- >',e.response.text)
+            sys.exit(8)
+        except requests.exceptions.Timeout as e:
+            logging.ERROR('Open NSW API is not Responding : --- >',e)
+            sys.exit(8)
+        except requests.exceptions.TooManyRedirects as e:
+            logging.ERROR('Redirects Detected Abort : --- >',e)
+            sys.exit(8)
         
-        return json_response
+        response_json=json.loads(response.content)
+        return response_json
 
 
 
@@ -58,9 +70,21 @@ class Facility(FacilityInterface):
         nested json response containing the current carpark status
 
         '''
-        json_response = requests.get(url_carpark_history+self.facility_name, headers=headers).json()
-        
-        return json_response
+        try:
+            response = requests.get(url_carpark_history+self.facility_name, headers=headers)
+            response.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            logging.ERROR('HTTP Error : --- >',e.response.text)
+            sys.exit(8)
+        except requests.exceptions.Timeout as e:
+            logging.ERROR('Open NSW API is not Responding : --- >',e)
+            sys.exit(8)
+        except requests.exceptions.TooManyRedirects as e:
+            logging.ERROR('Redirects Detected Abort : --- >',e)
+            sys.exit(8)
+
+        response_json=json.loads(response.content)
+        return response_json
 
     @staticmethod
     def get_init_carpark(headers,url_base_carpark=url_base_carpark) -> dict :
