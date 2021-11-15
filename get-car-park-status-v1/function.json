@@ -14,14 +14,7 @@
       "connection": "MyEventHubSendAppSetting",
       "direction": "out"
   }
-  ,
-    {
-      "type": "eventHub",
-      "name": "carparkeod",
-      "eventHubName": "car-park-status-eod",
-      "connection": "MyEventHubSendAppSetting",
-      "direction": "out"
-  }
+
   ]
 
 }

@@ -23,6 +23,6 @@ URL_BASE_CARPARK='https://api.transport.nsw.gov.au/v1/carpark'
 
 URL_CARPARK = 'https://api.transport.nsw.gov.au/v1/carpark?facility='
 
-URL_CARPARK_HISTORY='https://api.transport.nsw.gov.au/v1/carpark/history?'
+URL_CARPARK_HISTORY='https://api.transport.nsw.gov.au/v1/carpark/history?facility='
 
 
