@@ -9,8 +9,8 @@ The Sydney Metro stations for Tallawong, Bella Vista, Hills Showground, Cherrybr
 
 It is intended other car park occupancy data will be enabled via this API in the future.
 
-The objective of this project is 
-1. To capture the status and publish the car park 	:car: availability in Real time in a structured read to consume manner 
+## Objective of this project is 
+1. To capture the status and publish the car park 	:car: availability in Real time in a structured - read to consume manner 
 2. Publish the resuls in a public dashboard :chart_with_upwards_trend:
 
 ## Solution
